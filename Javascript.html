@@ -1,0 +1,16 @@
+<p>First Name: <input id="name" value=""></p>
+<input type="button" onclick="validate();" value="Validate Name">
+<script>
+function validate(){
+    var regName = /^([A-Z]{1})([a-z]{2,})$/;
+    var name = document.getElementById('name').value;
+    if(!regName.test(name)){
+        alert('Please enter your First Name (first name).');
+        document.getElementById('name').focus();
+        return false;
+    }else{
+        alert('Valid name given.');
+        return true;
+    }
+}
+</script>
