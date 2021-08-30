@@ -1,7 +1,11 @@
 <p>First Name: <input id="name" value=""></p>
-<input type="button" onclick="validate();" value="Validate Name">
+<input type="button" onclick="validateFirstName();" value="Validate Name">
+
+<p>Email: <input id="email" value=""></p>
+<input type="button" onclick="validateEmail();" value="Validate email">
+
 <script>
-function validate(){
+function validateFirstName(){
     var regName = /^([A-Z]{1})([a-z]{2,})$/;
     var name = document.getElementById('name').value;
     if(!regName.test(name)){
@@ -13,4 +17,18 @@ function validate(){
         return true;
     }
 }
+
+function validateEmail(){
+	var regEmail =/^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$/;
+	var email = document.getElementById('email').value;
+	if(!regEmail.test(email)){
+		alert('Please enter your Email (email).');
+		document.getElementById('email').focus();
+		return false;
+	}else{
+		alert('Valid email.');
+		return true;
+	}
+	}
+
 </script>
